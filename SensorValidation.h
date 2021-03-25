@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 /*=============================================================================
-=======                     PROTOTYPES OF FUNCTIONS                     =======
+=======                        MACRO DEFINITIONS                        =======
 =============================================================================*/
 #define SOC_DIFF_THRESHOLD        0.05
 #define CURRENT_DIFF_THRESHOLD    0.1
