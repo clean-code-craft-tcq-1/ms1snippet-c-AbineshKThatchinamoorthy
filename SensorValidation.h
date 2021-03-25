@@ -19,4 +19,4 @@
 =======                     PROTOTYPES OF FUNCTIONS                     =======
 =============================================================================*/
 int validateSensorIp_i(double value, double nextValue, double maxDelta);
-int validateSOCreadings(double* values, int numOfValues, double maxDelta);
+int validateSensorReadings_i(double* values, int numOfValues, double maxDelta);
