@@ -30,7 +30,7 @@ int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDe
   
   if(NULL != sensorVals_a)
   {
-    retVal_i = iterateSensorReadings_i(sensorVals_a, lastButOneIndex_i, maxDelta_d)
+    retVal_i = iterateSensorReadings_i(sensorVals_a, lastButOneIndex_i, maxDelta_d);
   }
   
   return retVal_i;
