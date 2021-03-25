@@ -38,8 +38,10 @@ int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDe
   {
     for(int cnt_i = 0; cnt_i < lastButOneIndex_i; cnt_i++) {
       validitySum += validateSensorIp_i(sensorVals_a[cnt_i], sensorVals_a[cnt_i + 1], maxDelta_d);
+      printf("validitySum : %d \n", validitySum);
     }
   }
+  printf("lastButOneIndex_i : %d \n", lastButOneIndex_i);
   retVal = (validitySum == lastButOneIndex_i) ? 1 : 0;
   return 1;
 }
