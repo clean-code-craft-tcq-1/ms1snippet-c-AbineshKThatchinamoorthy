@@ -41,7 +41,8 @@ int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDe
       printf("validitySum : %d \n", validitySum);
     }
   }
-  printf("lastButOneIndex_i : %d \n", lastButOneIndex_i);
+  printf("lastButOneIndex_i : %d \t validitySum : %d \n", lastButOneIndex_i, validitySum);
   retVal = (validitySum == lastButOneIndex_i) ? 1 : 0;
+  printf("retVal : %d \n", retVal);
   return 1;
 }
