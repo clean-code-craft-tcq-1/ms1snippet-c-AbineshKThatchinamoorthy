@@ -8,10 +8,15 @@
 *\n*/
 /*****************************************************************************/
 
-
+/*=============================================================================
+=======                     PROTOTYPES OF FUNCTIONS                     =======
+=============================================================================*/
+#define SOC_DIFF_THRESHOLD        0.05
+#define CURRENT_DIFF_THRESHOLD    0.1
+#define TEMP_DIFF_THRESHOLD       2
 
 /*=============================================================================
 =======                     PROTOTYPES OF FUNCTIONS                     =======
 =============================================================================*/
 int validateSensorIp_i(double value, double nextValue, double maxDelta);
-int validateSOCreadings(double* values, int numOfValues);
+int validateSOCreadings(double* values, int numOfValues, double maxDelta);
