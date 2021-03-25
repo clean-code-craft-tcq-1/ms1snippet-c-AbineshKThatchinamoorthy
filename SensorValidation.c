@@ -25,12 +25,12 @@
  *                0 - if 1 or more inputs are invalid
 *//*------------------------------------------------------------------------*/
 int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDelta_d) {
-  int retVal_i = 0, validitySum_i = 0;
+  int retVal_i = 0;
   int lastButOneIndex_i = numOfVals_i - 1;
   
   if(NULL != sensorVals_a)
   {
-    retVal_i = validateSensorIp_i(sensorVals_a, lastButOneIndex_i, maxDelta_d)
+    retVal_i = iterateSensorReadings_i(sensorVals_a, lastButOneIndex_i, maxDelta_d)
   }
   
   return retVal_i;
