@@ -33,7 +33,7 @@ int validateSensorIp_i(double value, double nextValue, double maxDelta) {
 *//*------------------------------------------------------------------------*/
 int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDelta_d) {
   int lastButOneIndex_i = numOfVals_i - 1;
-  for(int cnt_i = 0; cnt_i < lastButOneIndex_i; cnt_i++) {
+  for(int cnt_i = 0; (cnt_i < lastButOneIndex_i && NULL != sensorVals_a[cnt_i]); cnt_i++) {
     if(!validateSensorIp_i(sensorVals_a[cnt_i], sensorVals_a[cnt_i + 1], maxDelta_d)) {
       return 0;
     }
