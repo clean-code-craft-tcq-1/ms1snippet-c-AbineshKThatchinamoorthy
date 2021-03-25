@@ -76,3 +76,5 @@ int validateSensorIp_i(double value, double nextValue, double maxDelta) {
   }
   return 1;
 }
+
+/* EOF */
