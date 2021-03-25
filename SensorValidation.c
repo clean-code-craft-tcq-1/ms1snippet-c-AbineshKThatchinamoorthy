@@ -34,12 +34,12 @@ int validateSensorIp_i(double value, double nextValue, double maxDelta) {
 int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDelta_d) {
   int retVal_i = 0, validitySum_i = 0;
   int lastButOneIndex_i = numOfVals_i - 1;
-  if(NULL != sensorVals_a)
-  {
-    for(int cnt_i = 0; cnt_i < lastButOneIndex_i; cnt_i++) {
+  /*if(NULL != sensorVals_a)
+  {*/
+    for(int cnt_i = 0; (cnt_i < lastButOneIndex_i && NULL != sensorVals_a); cnt_i++) {
       validitySum_i += validateSensorIp_i(sensorVals_a[cnt_i], sensorVals_a[cnt_i + 1], maxDelta_d);
     }
-  }
+  //}
   retVal_i = (validitySum_i == lastButOneIndex_i) ? 1 : 0;
   return retVal_i;
 }
