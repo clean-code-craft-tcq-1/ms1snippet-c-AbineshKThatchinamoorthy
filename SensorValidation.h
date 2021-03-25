@@ -23,5 +23,5 @@
 /*=============================================================================
 =======                     PROTOTYPES OF FUNCTIONS                     =======
 =============================================================================*/
-int validateSensorIp_i(double value, double nextValue, double maxDelta);
-int validateSensorReadings_i(double* values, int numOfValues, double maxDelta);
+int validateSensorIp_i(double* sensorVals_a, double lastButOneIndex_i, double maxDelta);
+int validateSensorReadings_i(double* sensorVals_a, int numOfValues, double maxDelta);
