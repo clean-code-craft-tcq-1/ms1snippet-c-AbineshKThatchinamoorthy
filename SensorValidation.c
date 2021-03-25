@@ -32,17 +32,14 @@ int validateSensorIp_i(double value, double nextValue, double maxDelta) {
  *                0 - if 1 or more inputs are invalid
 *//*------------------------------------------------------------------------*/
 int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDelta_d) {
-  int retVal = 0, validitySum = 0;
+  int retVal_i = 0, validitySum_i = 0;
   int lastButOneIndex_i = numOfVals_i - 1;
   if(NULL != sensorVals_a)
   {
     for(int cnt_i = 0; cnt_i < lastButOneIndex_i; cnt_i++) {
-      validitySum += validateSensorIp_i(sensorVals_a[cnt_i], sensorVals_a[cnt_i + 1], maxDelta_d);
-      printf("validitySum : %d \n", validitySum);
+      validitySum_i += validateSensorIp_i(sensorVals_a[cnt_i], sensorVals_a[cnt_i + 1], maxDelta_d);
     }
   }
-  printf("lastButOneIndex_i : %d \t validitySum : %d \n", lastButOneIndex_i, validitySum);
-  retVal = (validitySum == lastButOneIndex_i) ? 1 : 0;
-  printf("retVal : %d \n", retVal);
-  return 1;
+  retVal_i = (validitySum_i == lastButOneIndex_i) ? 1 : 0;
+  return retVal_i;
 }
