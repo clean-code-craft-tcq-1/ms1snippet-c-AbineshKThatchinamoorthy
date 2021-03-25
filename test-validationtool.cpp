@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 
 #include "test/catch.hpp"
-#include "sensor-validate.h"
+#include "SensorValidation.h"
 
 TEST_CASE("reports error when soc jumps abruptly") {
   double socReadings[] = {0.0, 0.01, 0.5, 0.51};
