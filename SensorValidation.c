@@ -24,13 +24,14 @@ int validateSensorIp_i(double value, double nextValue, double maxDelta) {
  *
  *     \param     double* sensorVals_a - array of sensor values
  *     \param     int numOfVals_i - number sensor values provided for validation
+ *     \param     double maxDelta_d - maximum delta for the corr. batt. param
  *     \returns   1 - if all the inputs are valid
  *                0 - if 1 or more inputs are invalid
 *//*------------------------------------------------------------------------*/
-int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i) {
+int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDelta_d) {
   int lastButOneIndex_i = numOfVals_i - 1;
   for(int cnt_i = 0; cnt_i < lastButOneIndex_i; cnt_i++) {
-    if(!validateSensorIp_i(sensorVals_a[cnt_i], sensorVals_a[cnt_i + 1], 0.05)) {
+    if(!validateSensorIp_i(sensorVals_a[cnt_i], sensorVals_a[cnt_i + 1], maxDelta_d)) {
       return 0;
     }
   }
