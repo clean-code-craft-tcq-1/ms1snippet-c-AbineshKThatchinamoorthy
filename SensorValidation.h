@@ -23,8 +23,8 @@
 /*=============================================================================
 =======                     PROTOTYPES OF FUNCTIONS                     =======
 =============================================================================*/
-int validateSensorIp_i(double* sensorVals_a, double lastButOneIndex_i, double maxDelta);
+int validateSensorIp_i(double value, double nextValue, double maxDelta);
 int validateSensorReadings_i(double* sensorVals_a, int numOfValues, double maxDelta);
-int iterateSensorReadings_i(double* sensorVals_a, int lastButOneIndex_i, double maxDelta_d)
+int iterateSensorReadings_i(double* sensorVals_a, int lastButOneIndex_i, double maxDelta_d);
   
   /* EOF */
