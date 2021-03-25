@@ -42,23 +42,23 @@ TEST_CASE("Test for no error when current increases abruptly") {
 TEST_CASE("reports error when temperature increases abruptly") {
   double tempReadings[] = {0.0, 100.02, 103.03, 104.33};
   int numOfCurReadings = sizeof(tempReadings) / sizeof(tempReadings[0]);
-  REQUIRE(validateSensorReadings_i(tempReadings, numOfCurReadings, CURRENT_DIFF_THRESHOLD) == 0);
+  REQUIRE(validateSensorReadings_i(tempReadings, numOfCurReadings, TEMP_DIFF_THRESHOLD) == 0);
 }
 
 TEST_CASE("reports error when temperature decreases abruptly") {
   double tempReadings[] = {100.0, 0.1, 98.2, 99.0};
   int numOfCurReadings = sizeof(tempReadings) / sizeof(tempReadings[0]);
-  REQUIRE(validateSensorReadings_i(tempReadings, numOfCurReadings, CURRENT_DIFF_THRESHOLD) == 0);
+  REQUIRE(validateSensorReadings_i(tempReadings, numOfCurReadings, TEMP_DIFF_THRESHOLD) == 0);
 }
 
 TEST_CASE("Test for no error when temperature varies normally") {
   double tempReadings[] = {97.0, 98.02, 100.0, 101.12};
   int numOfCurReadings = sizeof(tempReadings) / sizeof(tempReadings[0]);
-  REQUIRE(validateSensorReadings_i(tempReadings, numOfCurReadings, CURRENT_DIFF_THRESHOLD) == 1);
+  REQUIRE(validateSensorReadings_i(tempReadings, numOfCurReadings, TEMP_DIFF_THRESHOLD) == 1);
 }
 
 TEST_CASE("Test for NULL input") {
   double tempReadings[] = {97.0, 98.02, 100.01, 101.12};
   int numOfCurReadings = sizeof(tempReadings) / sizeof(tempReadings[0]);
-  REQUIRE(validateSensorReadings_i(NULL, numOfCurReadings, CURRENT_DIFF_THRESHOLD) == 0);
+  REQUIRE(validateSensorReadings_i(NULL, numOfCurReadings, TEMP_DIFF_THRESHOLD) == 0);
 }
