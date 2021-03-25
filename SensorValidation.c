@@ -14,6 +14,9 @@ int validateSensorIp_i(double value, double nextValue, double maxDelta) {
   if(nextValue - value > maxDelta) {
     return 0;
   }
+  else if(value - nextValue > maxDelta) {
+    return 0; 
+  }
   return 1;
 }
 
