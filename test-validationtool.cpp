@@ -36,5 +36,5 @@ TEST_CASE("reports error when current decreases abruptly") {
 TEST_CASE("Test for no error when current increases abruptly") {
   double currentReadings[] = {0.0, 0.02, 0.03, 0.12};
   int numOfCurReadings = sizeof(currentReadings) / sizeof(currentReadings[0]);
-  REQUIRE(validateSensorReadings_i(currentReadings, numOfCurReadings, CURRENT_DIFF_THRESHOLD) == 0);
+  REQUIRE(validateSensorReadings_i(currentReadings, numOfCurReadings, CURRENT_DIFF_THRESHOLD) == 1);
 }
