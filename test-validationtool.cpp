@@ -52,7 +52,7 @@ TEST_CASE("reports error when temperature decreases abruptly") {
 }
 
 TEST_CASE("Test for no error when temperature increases abruptly") {
-  double currentReadings[] = {97.0, 99.02, 100.03, 101.12};
+  double currentReadings[] = {97.0, 98.02, 100.01, 101.12};
   int numOfCurReadings = sizeof(currentReadings) / sizeof(currentReadings[0]);
   REQUIRE(validateSensorReadings_i(currentReadings, numOfCurReadings, CURRENT_DIFF_THRESHOLD) == 1);
 }
