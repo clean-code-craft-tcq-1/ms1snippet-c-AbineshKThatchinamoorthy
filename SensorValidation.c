@@ -13,6 +13,9 @@
 =============================================================================*/
 #include "SensorValidation.h"
 
+/*=============================================================================
+=======                        FUNCTION DEFINITIONS                     =======
+=============================================================================*/
 /*---------------------------------------------------------------------------*/
 /*     FUNCTION:  validateSensorReadings_i
  */
@@ -21,8 +24,8 @@
  *     \param     double* sensorVals_a - array of sensor values
  *     \param     int numOfVals_i - number sensor values provided for validation
  *     \param     double maxDelta_d - maximum delta for the corr. batt. param
- *     \returns   1 - if all the inputs are valid
- *                0 - if 1 or more inputs are invalid
+ *     \returns   retVal_i - 1 - if all the inputs are valid
+ *                           0 - if 1 or more inputs are invalid
 *//*------------------------------------------------------------------------*/
 int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDelta_d) {
   int retVal_i = 0;
@@ -39,7 +42,7 @@ int validateSensorReadings_i(double* sensorVals_a, int numOfVals_i, double maxDe
 /*---------------------------------------------------------------------------*/
 /*     FUNCTION:  iterateSensorReadings_i
  */
-/*!    \brief     Iterate each sensor and send it for validation
+/*!    \brief     Iterate each sensor input and send it for validation
  *
  *     \param     double* sensorVals_a - array of sensor values
  *     \param     int lastButOneIndex_i - (No of sensor values - 1)
@@ -64,17 +67,19 @@ int iterateSensorReadings_i(double* sensorVals_a, int lastButOneIndex_i, double 
  *     \param     double value - previous sensor value
  *     \param     double value - sensor value to be validated
  *     \param     double maxDelta_d - maximum delta for the corr. batt. param
- *     \returns   1 - if the input is valid
- *                0 - if the input is invalid
+ *     \returns   changeValidity_i  - 1 - if the input is valid
+ *                                    0 - if the input is invalid
 *//*------------------------------------------------------------------------*/
 int validateSensorIp_i(double value, double nextValue, double maxDelta) {
+  int changeValidity_i = 1;
+  
   if(nextValue - value > maxDelta) {
-    return 0;
+    changeValidity_i = 0;
   }
   else if(value - nextValue > maxDelta) {
-    return 0; 
+    changeValidity_i = 0; 
   }
-  return 1;
+  return changeValidity_i;
 }
 
 /* EOF */
